@@ -1,1 +1,26 @@
-<p>header works!</p>
+<div class="w-full h-[116px]  flex flex-row items-center">
+  <section class="flex flex-row ml-[3.806vw] gap-[1.46vw]">
+    <app-icon-menu-counter [NumberCpunter]="0" [addImage]="'assets/Icon/cart.png'"></app-icon-menu-counter>
+    <app-icon-menu-counter [NumberCpunter]="2" [addImage]="'assets/Icon/heart.png'"></app-icon-menu-counter>
+    <img src="assets/Icon/user%20(1).png" class="w-[32px] h-[32px] "/>
+  </section>
+  <section class="ml-[5.41vw]">
+    <section class="flex flex-col  items-end text-normal-text text-black regular">
+      <p class="bold">02155440000</p>
+      <p> شنبه تا پنجشنبه:9 تا 16</p>
+    </section>
+
+  </section>
+  <section class="w-auto h-auto ml-[6.44vw]">
+
+      <input type="text" class="outline-0 w-[38.50vw] h-[6.75vh] text-normal-text regular rounded-2xl px-[16px]" placeholder="جستجو برای محصولات ">
+
+  </section>
+  <section>
+      <img src="assets/Icon/logo-3.png" class="w-[136px] h-[74px] ml-[15vw]">
+  </section>
+
+</div>
+<div style="direction: rtl;">
+  <p-megaMenu   [model]="gfg" />
+</div>

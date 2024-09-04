@@ -1,0 +1,7 @@
+<div class="carousel bg-green-400 w-full ">
+  <div class="item " *ngFor="let item of this.items; let i = index" [class.active]="currentSlideIndex == i">
+    <img [src]="item.image" alt="Carousel Image" class="w-full">
+  </div>
+  <button (click)="prevSlide()">Previous</button>
+  <button (click)="nextSlide()">Next</button>
+</div>

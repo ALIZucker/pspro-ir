@@ -6,14 +6,19 @@ module.exports = {
   theme: {
     extend: {
       fontSize:{
-        'normal-text':'12px',
-        'title-text':'20px'
+        'normal-text':'16px',
+        'title-text':'24px',
+        'big-title-text':'44px'
       },
       margin:{
-        'margin-20px-vh':'3.072vh',
+        'margin-60px-vh':'9.831vh',
         'margin-20px-vw':'1.464vw',
         'margin-16px-vh':'2.457vw',
         'margin-16px-vw':' 1.171vw',
+      },
+      backgroundColor:{
+        'primery':'#fff',
+        'secender':'#f5f5f5',
       }
     },
   },
