@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {SliderComponent} from "../../component/slider/slider.component";
 import {PostComponent} from "../../component/post/post.component";
+import {postDetail, PostItem} from "../../component/post/data-interface";
 
 @Component({
   selector: 'app-home',
@@ -12,6 +13,11 @@ import {PostComponent} from "../../component/post/post.component";
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit {
+  ngOnInit(): void {
+    this.data = PostItem
+  }
+
+  data!: postDetail
 
 }

@@ -19,6 +19,7 @@ module.exports = {
       backgroundColor:{
         'primery':'#fff',
         'secender':'#f5f5f5',
+        'seard-color':'#f33823',
       }
     },
   },

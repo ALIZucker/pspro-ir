@@ -1,4 +1,13 @@
 <app-slider></app-slider>
-<div class="flex flex-row justify-center">
-  <app-post></app-post>
+<div class="flex flex-col items-center justify-center mt-[10vh]">
+  <h2 class="text-big-title-text bold ">آخرین محصولات</h2>
+  <div class="flex flex-row justify-center gap-2 mt-[36px]">
+
+    <app-post [PostItems]="data"></app-post>
+    <app-post [PostItems]="data"></app-post>
+    <app-post [PostItems]="data"></app-post>
+    <app-post [PostItems]="data"></app-post>
+    <app-post [PostItems]="data"></app-post>
+  </div>
 </div>
+
