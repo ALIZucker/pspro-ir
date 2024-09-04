@@ -15,20 +15,17 @@ export class SliderComponent implements OnInit {
     {
       title: 'Item 1',
       description: 'Description for item 1',
-      image:
-        'https://images.pexels.com/photos/214574/pexels-photo-214574.jpeg?auto=compress&cs=tinysrgb&w=1200',
+      image:'/assets/Image/b1.webp',
     },
     {
       title: 'Item 2',
       description: 'Description for item 2',
-      image:
-        'https://images.pexels.com/photos/39853/woman-girl-freedom-happy-39853.jpeg?auto=compress&cs=tinysrgb&w=1200',
+      image:'/assets/Image/b2.webp'
     },
     {
       title: 'Item 3',
       description: 'Description for item 3',
-      image:
-        'https://images.pexels.com/photos/1556691/pexels-photo-1556691.jpeg?auto=compress&cs=tinysrgb&w=1200',
+      image:'/assets/Image/b3.webp'
     },
   ];
   currentSlideIndex: number = 1;
@@ -37,6 +34,9 @@ export class SliderComponent implements OnInit {
   }
 
   ngOnInit() {
+    setInterval(()=>{
+      this.currentSlideIndex = (this.currentSlideIndex + 1) % this.items.length;
+    },4000)
   }
 
   nextSlide() {

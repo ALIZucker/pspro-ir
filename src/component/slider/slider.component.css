@@ -5,18 +5,20 @@
   flex-wrap: nowrap;
   align-items: center;
 }
-.carousel .item{
-  z-index: 1;
-  opacity: 0.6;
+
+.carousel .item {
+  z-index: 0;
+  opacity: 0;
   position: absolute;
   transform: scale(0.3);
   transition: all 0.3s ease-in;
-  &.active{
+
+  &.active {
     position: relative;
     transform: scale(1);
-    width: 90%;
+    width: 100%;
     margin: 0 auto;
-    z-index: 10;
+    z-index: 0;
     opacity: 1;
   }
 }
@@ -25,24 +27,41 @@
   width: 100%;
   display: block;
   object-fit: cover;
-  object-position: center;
   height: 490px;
 }
 
 .carousel button {
   position: absolute;
   top: 50%;
-  transform: translateY(-50%);
-  padding: 10px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  transform: translateY(-5%);
   background-color: transparent;
   border: none;
+  opacity: 60%;
   cursor: pointer;
-  z-index: 100;
+  z-index: 1;
 }
 
 .carousel button:hover {
   background-color: rgba(0, 0, 0, 0.2);
-  color: white;
+  transform: translate(0.5px, -0.5px);
+  opacity: 90%;
+}
+
+.letf {
+  background-image: url("/assets/Image/back.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+}
+.right{
+  background-image: url("/assets/Image/next.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .carousel button:first-child {
