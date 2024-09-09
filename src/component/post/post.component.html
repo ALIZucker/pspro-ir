@@ -1,19 +1,20 @@
 <div class="w-[210px] h-[20.25rem] relative" style="border: 1px solid gainsboro">
+  @if(PostItems.isOffer){
   <div
     class="absolute z-10 top-0 right-0 w-[32px] h-[18px] bg-seard-color text-[12px] text-center text-white">{{ PostItems.percender }}
-    %
-  </div>
-  <img #imageElem [src]="PostItems.imageAdress" class="w-full h-[13.125rem] ">
-  <h2 class="mt-[3vh] text-[18px] bold mx-1.5" style="direction: rtl;">{{ PostItems.title }}</h2>
-  @if(PostItems.isOffed){
+  %
+</div>
+  }
+
+  <img #imageElem [src]="PostItems.image" class="w-full h-[13.125rem] ">
+  <h2 class="mt-[3vh] text-normal-text bold mx-1.5" style="direction: rtl;">{{ PostItems.title }}</h2>
+  @if(PostItems.isOffer){
     <p style="direction: rtl;margin-top: 1.22vh; ">
       <span class="text-red-700 mx-1 text-normal-text"> {{ PostItems.price }} تومان</span><span style="text-decoration-line: line-through;text-decoration-color: #444444;
-text-decoration-style: solid;font-size: 18px">{{ PostItems.priceOffer }}تومان</span>
+text-decoration-style: solid;font-size: 18px">{{ PostItems.OffPrice }}تومان</span>
     </p>
   }@else {
     <p style="direction: rtl;margin-top: 1.22vh; ">
       <span class=" mx-1 text-normal-text"> {{ PostItems.price }} تومان</span></p>
   }
-
-
 </div>

@@ -27,6 +27,7 @@ export class PostComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit() {
+    console.log(this.PostItems);
   }
 
 
