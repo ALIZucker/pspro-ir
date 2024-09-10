@@ -11,9 +11,9 @@
   </section>
 
   <div class="flex flex-row flex-wrap justify-start gap-2 mt-[36px]" *ngIf=" Post$ | async  as items">
-
-    <app-post *ngFor="let itemPost of items;index as i" [PostItems]="itemPost"></app-post>
-
+    @for (itemPost of items;track $index){
+      <a [routerLink]="'dashboard-post/'+itemPost.name" ><app-post [PostItems]="itemPost"></app-post> </a>
+    }
   </div>
 
 </div>

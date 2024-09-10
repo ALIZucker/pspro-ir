@@ -10,6 +10,7 @@ import {postDetail} from "../../component/post/data-interface";
 export class ApiServerService {
 
   allData$!: Observable<postDetail[]>;
+  postItemQuery$!: Observable<postDetail>;
 
   constructor(private http: HttpClient) {
   }
@@ -17,5 +18,10 @@ export class ApiServerService {
   getDataApi(Url: string): Observable<postDetail[]> {
     this.allData$ = this.http.get<postDetail[]>(Url)
     return this.allData$;
+  }
+
+  getOnlyOneItem(Url: string): Observable<postDetail> {
+    this.postItemQuery$ = this.http.get<postDetail>(Url)
+    return this.postItemQuery$;
   }
 }

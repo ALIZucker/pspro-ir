@@ -1,11 +1,12 @@
-import {Component, OnInit,AfterViewInit} from '@angular/core';
+import {Component, OnInit, AfterViewInit, Inject, inject} from '@angular/core';
 import {SliderComponent} from "../../component/slider/slider.component";
 import {PostComponent} from "../../component/post/post.component";
 import {postDetail} from "../../component/post/data-interface";
 import {ApiServerService} from "./api-server.service";
-import {Observable} from "rxjs";
+import {map, Observable} from "rxjs";
 import {CommonModule, NgIf} from "@angular/common";
 import {BannerWebComponent} from "../../component/banner-web/banner-web.component";
+import {ActivatedRoute, RouterLink} from "@angular/router";
 
 @Component({
   selector: 'app-home',
@@ -16,27 +17,23 @@ import {BannerWebComponent} from "../../component/banner-web/banner-web.componen
     CommonModule,
     NgIf,
     BannerWebComponent,
+    RouterLink,
 
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
-export class HomeComponent implements OnInit ,AfterViewInit{
-  constructor(private apiserver: ApiServerService) {
-  }
-
-  ngAfterViewInit(): void {
-      console.log('ngAfterViewInit');
-      console.log(this.ArryPost.length);
-
-    }
+export class HomeComponent implements OnInit {
 
   Post$!: Observable<postDetail[]>;
-  ArryPost: postDetail[] = []
+
+  constructor(private apiserver: ApiServerService, private routthis: ActivatedRoute,) {
+  }
+
+
 
   ngOnInit(): void {
     this.Post$ = this.apiserver.getDataApi('http://localhost:8000/Post')
-
   }
 
 }
