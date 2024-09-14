@@ -14,6 +14,11 @@ export class ApiServerService {
 
   constructor(private http: HttpClient) {
   }
+  addPostItem(post: postDetail) {
+    this.http.post<postDetail>('http://localhost:8000/bascket', post).subscribe(
+      value => console.log(value)
+    )
+  }
 
   getDataApi(Url: string): Observable<postDetail[]> {
     this.allData$ = this.http.get<postDetail[]>(Url)
