@@ -1,1 +1,4 @@
-<p>dashboard-post works!</p>
+<div class="w-full h-auto flex-row-reverse flex justify-start px-10 py-5">
+  <app-gallery-kala [adressImage]="Items.image"></app-gallery-kala>
+  <app-post-detail [posItems]="Items" (botElem)="botEvent($event)"></app-post-detail>
+</div>

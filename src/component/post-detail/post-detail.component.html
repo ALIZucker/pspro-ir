@@ -1,0 +1,18 @@
+<div class="max-w-[47.656vw] flex flex-col gap-5 w-[610px] h-[84.17vh]  pr-10 py-12"
+     style="border-right: 2px #0c1734  solid">
+  <p class="regular text-normal-text w-full h-auto ">{{ posItems.manufacturer }}</p>
+  <h1 class="bold text-[30px] w-full h-auto  ">{{ posItems.title }}</h1>
+
+  <p class=" regular text-normal-text mt-5 w-full h-auto">{{ posItems.description }}</p>
+  <section class="flex flex-row-reverse  gap-5">
+    <p class="regular text-title-text"> {{ posItems.price }} تومان</p>
+    <p class="regular text-title-text text-red-700 " style="text-decoration-line: line-through;
+      text-decoration-color: darkred;" *ngIf="posItems.isOffer">{{ posItems.OffPrice }} تومان</p>
+  </section>
+  <section class="w-full px-5  mt-5">
+    <button style="border: 1px solid black" (click)="buyEvent()"
+            class="hover:text-white hover:bg-gray-900 bg-transparent  text-black w-full h-[46px] p-2 bold text-normal-text rounded-2xl">
+      سبد خرید
+    </button>
+  </section>
+</div>

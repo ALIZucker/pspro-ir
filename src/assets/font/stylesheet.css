@@ -17,6 +17,7 @@
 }
 .bold{
   font-family: "Vazirmatn";
+  direction: rtl;
 }
 .regular{
   font-family: 'Vazirmatn';

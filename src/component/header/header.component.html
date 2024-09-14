@@ -1,26 +1,30 @@
 <div class="w-full h-[116px]  flex flex-row items-center">
   <section class="flex flex-row ml-[3.8vw] gap-[1.46vw]">
-    <app-icon-menu-counter [NumberCpunter]="0" [addImage]="'assets/Icon/cart.png'"></app-icon-menu-counter>
+    <app-icon-menu-counter (click)="OnmouseDown($event)"  [NumberCpunter]="0" [addImage]="'assets/Icon/cart.png'"></app-icon-menu-counter>
     <app-icon-menu-counter [NumberCpunter]="2" [addImage]="'assets/Icon/heart.png'"></app-icon-menu-counter>
     <img src="assets/Icon/user%20(1).png" class="w-[32px] h-[32px] "/>
   </section>
   <section style="direction: rtl" class="ml-[5.3vw] w-[14.64vw] ">
-    <section  class="flex flex-col  items-start text-normal-text text-black regular">
+    <section class="flex flex-col  items-start text-normal-text text-black regular">
       <p class="bold">02155440000</p>
       <p> شنبه تا پنجشنبه:9 تا 16</p>
     </section>
 
   </section>
   <section class="w-auto h-auto ml-[6.44vw]">
-
-      <input type="text" class="outline-0 borderbox w-[38.50vw] h-[6.75vh] text-normal-text regular rounded-2xl px-[16px]" placeholder="جستجو برای محصولات ">
-
+    <input type="text" class="outline-0 borderbox w-[38.50vw] h-[6.75vh] text-normal-text regular rounded-2xl px-[16px]"
+           placeholder="جستجو برای محصولات ">
   </section>
   <section>
-      <a routerLink=""><img src="assets/Icon/logo-3.png" class="w-[10vw] h-[74px] ml-[7vw]"></a>
+    <a routerLink=""><img src="assets/Icon/logo-3.png" class="w-[10vw] h-[74px] ml-[7vw]"></a>
   </section>
 
 </div>
-<div style="direction: rtl; " >
-  <p-megaMenu   [model]="gfg" />
+<div *ngIf="isShow;else showbasket"></div>
+<ng-template #showbasket>
+  <app-bascket-show></app-bascket-show>
+</ng-template>
+<div style="direction: rtl; ">
+  <p-megaMenu [model]="gfg"/>
 </div>
+
