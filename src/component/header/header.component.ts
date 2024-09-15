@@ -21,7 +21,7 @@ import {CommonModule, NgIf} from "@angular/common";
 })
 export class HeaderComponent implements OnInit {
   gfg!: MegaMenuItem[];
-  isShow: boolean = false
+  isShow: boolean = true
 
   ngOnInit(): void {
     this.gfg = [

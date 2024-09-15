@@ -16,9 +16,11 @@ import {ApiServerService} from "../../pages/home/api-server.service";
 export class PostDetailComponent {
   @Input({required: true}) posItems!: postDetail;
   @Output() botElem: EventEmitter<string> = new EventEmitter<string>();
-  constructor(private servece:ApiServerService) {
+
+  constructor(private servece: ApiServerService) {
   }
+
   buyEvent() {
-    this.botElem.emit('buy')
+    this.servece.addPostItem(this.posItems).subscribe(value => alert(value.massage))
   }
 }
