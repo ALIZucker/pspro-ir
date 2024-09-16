@@ -4,6 +4,8 @@ import {MegaMenuModule} from 'primeng/megamenu';
 import {MegaMenuItem} from "primeng/api";
 import {BascketShowComponent} from "../bascket-show/bascket-show.component";
 import {CommonModule, NgIf} from "@angular/common";
+import {ApiServerService} from "../../pages/home/api-server.service";
+import {AllertServiceService} from "../../app/allert-service.service";
 
 
 @Component({
@@ -22,8 +24,18 @@ import {CommonModule, NgIf} from "@angular/common";
 export class HeaderComponent implements OnInit {
   gfg!: MegaMenuItem[];
   isShow: boolean = true
+  counter: number = 0
+
+  constructor(private apiservice: ApiServerService, private allertservice: AllertServiceService) {
+
+  }
 
   ngOnInit(): void {
+    this.getcounter()
+    this.allertservice.subject.subscribe(subject => {
+    this.getcounter()
+    })
+
     this.gfg = [
       {
         label: 'شیر خشک',
@@ -100,7 +112,14 @@ export class HeaderComponent implements OnInit {
     ];
   }
 
-
+  getcounter() {
+    this.apiservice.getBascketItems().subscribe(value => {
+      this.counter = 0
+      value.forEach(value1 => {
+        this.counter += value1.counter
+      })
+    })
+  }
 
   OnmouseDown($event: MouseEvent) {
     this.isShow = !this.isShow;

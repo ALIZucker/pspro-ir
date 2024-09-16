@@ -9,4 +9,5 @@ export interface postDetail{
   description: string,
   manufacturer:string,
   percender:number,
+  counter:number
 }

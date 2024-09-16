@@ -1,17 +1,19 @@
 <div class="w-[410px] absolute h-[380px] bg-primery  z-10 left-7 px-7">
-  <section class="w-full h-[250px] cursor-grab  overflow-y-scroll flex flex-col gap-3" *ngIf="bascketItems | async as items">
+  <section class="w-full h-[250px] cursor-grab  overflow-y-scroll flex flex-col gap-3"
+           *ngIf="bascketItems$ | async as items">
     @for (item of items; track $index) {
-      <div class=" w-full  h-[93px] flex flex-row-reverse gap-3.5 py-2.5 box-border " style="border-bottom: 1px #444444 solid">
+      <div class=" w-full  h-[93px] flex flex-row-reverse gap-3.5 py-2.5 box-border "
+           style="border-bottom: 1px #444444 solid">
         <img [src]="item.image" class="w-[80px] h-[80px] object-cover ">
         <div class="flex flex-col gap-1">
           <div class="regular flex flex-row">
-            <h2 class="regular text-[12px] w-[220px] h-8  overflow-hidden"> {{item.title}}</h2>
+            <h2 class="regular text-[12px] w-[220px] h-8  overflow-hidden"> {{ item.title }}</h2>
             <img src="assets/Image/icons8-cancel-24.png" class="w-[16px] h-[16px]">
           </div>
-          <p class="regular text-[12px]">{{item.price}} تومان</p>
+          <p class="regular text-[12px]">{{ item.price }} تومان</p>
           <div class="flex flex-row gap-2">
             <img src="assets/Icon/icons8-minus-32.png" class="w-[24px] h-[24px]">
-            <p class="regular">1</p>
+            <p class="regular">{{ item.counter }}</p>
             <img src="assets/Icon/icons8-plus-24.png" class="w-[24px] h-[24px]">
           </div>
         </div>
@@ -22,7 +24,7 @@
   </section>
   <div class="w-[340px] regular flex flex-row justify-between py-3.5">
     <p>جمع کل</p>
-    <p>240 تومان</p>
+    <p>{{ sum }} تومان</p>
   </div>
   <button
     class="regular hover:bg-gray-400 hover:text-black w-[340px] h-[46px] bg-gray-700 text-white text-normal-text rounded-2xl m">
