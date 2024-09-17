@@ -1,6 +1,7 @@
 # Pspro
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.9.
+در این پروژه از انگولار 17 استفاده شده استو هدف این پروژه استفاده از سه مفهوم  behaviorsubject , routing , api این پروژه یه قسمت بک اند داره که با استفاده از زبان پایتون و fastapi استفاده شده است ابتدا باید فایل دانلود و در داخل محیط  به استفاده از دستور زیر اجرا کنید و سپس به اجرای سایت بپردازید و حتما باید ادرس سرور ارسال کننده داده به صورت زیر باشد .uvicorn main:app --host localhost --port 8000 --reload
+
 
 ## Development server
 
