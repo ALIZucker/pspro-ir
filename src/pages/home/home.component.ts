@@ -24,15 +24,31 @@ import {ActivatedRoute, RouterLink} from "@angular/router";
   styleUrl: './home.component.css'
 })
 export class HomeComponent implements OnInit {
-
+  hours: number = 8
+  minutes: number = 0
+  seconds: number = 59
+  valuesec!: any
+  valueminu: any = 59
   Post$!: Observable<postDetail[]>;
 
   constructor(private apiserver: ApiServerService, private routthis: ActivatedRoute,) {
   }
 
 
-
   ngOnInit(): void {
+    setInterval(() => {
+      if (this.seconds == 0) {
+        this.valuesec = this.seconds = 59
+        this.valueminu = this.minutes = this.minutes - 1
+      }
+      if (this.seconds <= 10) {
+        this.valuesec = this.seconds = this.seconds - 1
+        this.valuesec = ("0" + this.seconds)
+      } else {
+        this.valuesec = this.seconds = this.seconds - 1
+      }
+
+    }, 1000)
     this.Post$ = this.apiserver.getDataApi('http://localhost:8000/Post')
   }
 

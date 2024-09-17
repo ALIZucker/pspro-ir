@@ -4,13 +4,13 @@
     <h2 class=" bold text-title-text ">فروش ویژه تا</h2>
     <section class=" text-normal-text flex flex-row-reverse rounded-2xl w-[13.75rem] h-[2.625rem] px-[17px] py-[10px] bg-secender">
       <div class="text-normal-text regular ml-1.5"><span  class="ml-1">8</span>ساعت</div>
-      <div class="text-normal-text regular ml-1.5"><span  class="ml-1">16</span>دقیقه</div>
-      <div class="text-normal-text regular ml-1.5"><span  class="ml-1">40</span>ثانیه</div>
+      <div class="text-normal-text regular ml-1.5"><span  class="ml-1">{{valueminu}}</span>دقیقه</div>
+      <div class="text-normal-text regular ml-1.5"><span  class="ml-1">{{valuesec}}</span>ثانیه</div>
 
     </section>
   </section>
 
-  <div class="flex flex-row flex-wrap justify-start gap-2 mt-[36px]" *ngIf=" Post$ | async  as items">
+  <div class="flex flex-row-reverse flex-wrap justify-start max-w-[1402px] gap-2 mt-[36px]" *ngIf=" Post$ | async  as items">
     @for (itemPost of items;track $index){
       <a [routerLink]="'dashboard-post/'+itemPost.name" ><app-post [PostItems]="itemPost"></app-post> </a>
     }
